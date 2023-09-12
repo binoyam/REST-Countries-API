@@ -28,18 +28,12 @@ body {
 img {
   max-width: 100%;
 }
-button {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-  /* padding-top: 5px; */
-}
 
 .app {
   width: 100%;
   height: 100%;
 }
+/* HEADER */
 .nav-bar {
   width: 100%;
   padding: 1rem 3rem;
@@ -48,7 +42,7 @@ button {
   align-items: center;
   justify-content: space-between;
   color: var(--VeryLightGray);
-  /* box-shadow: ; */
+  box-shadow: 0px 1px 20px 7px var(--VeryDarkBlueText);
 }
 .dark-mode-div {
   display: flex;
@@ -62,7 +56,7 @@ button {
   width: 20px;
   cursor: pointer;
 }
-
+/* FILTER / SEARCH*/
 form {
   width: 100%;
   padding: 0 3rem;
@@ -78,32 +72,22 @@ form input {
   padding: 1rem;
   border-radius: 5px;
 }
-.select-options-div {
-  width: 15%;
-  color: var(--VeryDarkBlueText);
-  font-size: 16px;
-  font-weight: 600;
-  position: relative;
-}
-img.arrow {
-  width: 15px;
-}
-.select-region {
-  width: 100%;
-  background-color: var(--White);
+.select{
+  width: 150px;
   padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.options {
   background-color: var(--White);
-
-  list-style: none;
-  margin-top: 5px;
-  position: absolute;
-  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
-.options li{
-  padding: 5px;
+/* COUNTRIES*/
+.countries{
+  width: 100%;
+  height: 800px;
+  padding: 0 3rem;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
 }
