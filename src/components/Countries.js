@@ -1,18 +1,33 @@
+
 function Countries(props) {
+ 
+
+
+
+
   return (
+
     <>
+    
+
       <div className="countries">
         {props.countries.map((country) => (
           <article key={country.numericCode}>
             <img src={country.flags.svg} alt={country.name.common} />
-            <h3 className="name">{country.name.common}</h3>
-            <p className="population">Population: {country.population}</p>
+            <div className="country-info-div">
+              <h3 className="name">{country.name.official}</h3>
+              <p className="population">
+                <span className="pre-text">Population:</span>
+                {new Intl.NumberFormat().format(country.population)}
+              </p>
 
-            <p className="region">Region: {country.region}</p>
-            <p className="capital">
-              {console.log(country.name)}
-              Capital: {country.capital}
-            </p>
+              <p className="region">
+                <span className="pre-text">Region:</span> {country.region}
+              </p>
+              <p className="capital">
+                <span className="pre-text">Capital:</span> {country.capital}
+              </p>
+            </div>
           </article>
         ))}
       </div>
