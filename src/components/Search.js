@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
-function Search({ onSearch }, { onSelect }) {
+function Search({ onSearch, onSelect }) {
   const [searchInput, setSearchInput] = useState("");
 
   const handleChange = (e) => {
     e.preventDefault();
-    onSearch(searchInput)
+    onSearch(searchInput);
   };
 
   const handleSelect = (e) => {
     const regionName = e.target.value;
+    onSelect(regionName);
   };
 
   return (

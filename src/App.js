@@ -19,6 +19,11 @@ function App() {
     const countries = await response.json();
     setCountries(countries);
   };
+  const getCountryByRegion = async (regionName) => {
+    const response = await fetch(`${url}/region/${regionName}`);
+    const countries = await response.json();
+    setCountries(countries);
+  };
 
   useEffect(() => {
     countryData();
@@ -27,7 +32,9 @@ function App() {
   return (
     <div className="app">
       <Nav />
-      <Search onSearch={getCountryByName} />
+      <Search 
+      onSelect={getCountryByRegion}
+      onSearch={getCountryByName} />
       <Countries countries={countries} />
     </div>
   );
