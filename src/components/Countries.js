@@ -13,7 +13,7 @@ function Countries(props) {
       <div className="countries">
         {props.countries.map((country) => (
           <article key={country.name.official}>
-            <img src={country.flags.svg} alt={country.name.common} />
+            <img src={country.flags.png} alt={country.name.common} />
             <div className="country-info-div">
               <h3 className="name">{country.name.official}</h3>
               <p className="population">

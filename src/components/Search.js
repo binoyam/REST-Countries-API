@@ -26,7 +26,7 @@ function Search({ onSearch, onSelect }) {
 
       <div className="select-div">
         <select className="select" onChange={handleSelect}>
-          <option value="">Filter by Region</option>
+          <option value="" disabled>Filter by Region</option>
           <option value="Africa">Africa</option>
           <option value="Asia">Asia</option>
           <option value="Europe">Europe</option>

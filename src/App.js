@@ -9,20 +9,47 @@ function App() {
   const [countries, setCountries] = useState([]);
 
   const countryData = async () => {
-    const response = await fetch(`${url}/all`);
-    const countries = await response.json();
-    setCountries(countries);
-    // console.log(countries);
+    try {
+      const response = await fetch(`${url}/all`);
+
+      if (!response.ok) throw new Error("Something Went Wrong");
+
+      const countries = await response.json();
+      setCountries(countries);
+      // console.log(countries);
+    } catch (error) {
+      alert(error);
+    }
   };
   const getCountryByName = async (countryName) => {
-    const response = await fetch(`${url}/name/${countryName}`);
-    const countries = await response.json();
-    setCountries(countries);
+    try {
+      const response = await fetch(`${url}/name/${countryName}`);
+
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error("Country data not found");
+        } else {
+          throw new Error("Something Went Wrong");
+        }
+      }
+      const countries = await response.json();
+
+      setCountries(countries);
+    } catch (error) {
+      alert(error);
+    }
   };
   const getCountryByRegion = async (regionName) => {
-    const response = await fetch(`${url}/region/${regionName}`);
-    const countries = await response.json();
-    setCountries(countries);
+    try {
+      const response = await fetch(`${url}/region/${regionName}`);
+
+      if (!response.ok) throw new Error("Something Went Wrong");
+
+      const countries = await response.json();
+      setCountries(countries);
+    } catch (error) {
+      alert(error);
+    }
   };
 
   useEffect(() => {
@@ -32,9 +59,7 @@ function App() {
   return (
     <div className="app">
       <Nav />
-      <Search 
-      onSelect={getCountryByRegion}
-      onSearch={getCountryByName} />
+      <Search onSelect={getCountryByRegion} onSearch={getCountryByName} />
       <Countries countries={countries} />
     </div>
   );

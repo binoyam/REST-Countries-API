@@ -1,5 +1,5 @@
 import React from "react";
-import MoonImg from "../images/moon-regular.svg";
+import MoonImg from "../images/moon-icon.svg";
 
 function Nav() {
   return (
