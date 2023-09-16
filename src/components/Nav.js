@@ -14,3 +14,4 @@ function Nav() {
 }
 
 export default Nav;
+/* change the moon icon to a lighter stroke*/

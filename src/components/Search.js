@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SearchIcon from '../images/search-icon.svg'
 
 function Search({ onSearch, onSelect }) {
   const [searchInput, setSearchInput] = useState("");
@@ -15,6 +16,7 @@ function Search({ onSearch, onSelect }) {
 
   return (
     <form onSubmit={handleChange}>
+      <img className="search-icon" src={SearchIcon} alt="search icon" />
       <input
         type="text"
         placeholder="Search for a country..."
@@ -24,7 +26,7 @@ function Search({ onSearch, onSelect }) {
 
       <div className="select-div">
         <select className="select" onChange={handleSelect}>
-          <option value="Filter by Region">Filter by Region</option>
+          <option value="">Filter by Region</option>
           <option value="Africa">Africa</option>
           <option value="Asia">Asia</option>
           <option value="Europe">Europe</option>
@@ -37,3 +39,4 @@ function Search({ onSearch, onSelect }) {
 }
 
 export default Search;
+/* should search and filter be diffrent components? */
