@@ -7,6 +7,8 @@ const url = "https://restcountries.com/v3.1";
 
 function App() {
   const [countries, setCountries] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const countryData = async () => {
     try {
@@ -16,9 +18,12 @@ function App() {
 
       const countries = await response.json();
       setCountries(countries);
+      setIsLoading(false);
+
       // console.log(countries);
     } catch (error) {
-      alert(error);
+      setIsLoading(false);
+      setError(error.message);
     }
   };
   const getCountryByName = async (countryName) => {
@@ -35,8 +40,11 @@ function App() {
       const countries = await response.json();
 
       setCountries(countries);
+      setIsLoading(false);
+
     } catch (error) {
-      alert(error);
+      setIsLoading(false);
+      setError(error.message);
     }
   };
   const getCountryByRegion = async (regionName) => {
@@ -47,8 +55,11 @@ function App() {
 
       const countries = await response.json();
       setCountries(countries);
+      setIsLoading(false);
+
     } catch (error) {
-      alert(error);
+      setIsLoading(false);
+      setError(error.message);
     }
   };
 

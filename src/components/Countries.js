@@ -1,9 +1,6 @@
+import { Link } from "react-router-dom";
 
 function Countries(props) {
- 
-
-
-
 
   return (
 
@@ -12,8 +9,13 @@ function Countries(props) {
 
       <div className="countries">
         {props.countries.map((country) => (
+          <Link to={`/country/${country.name.common}`}>
           <article key={country.name.official}>
-            <img src={country.flags.png} alt={country.name.common} />
+            <img 
+            src={country.flags.png} 
+            alt={country.name.common} 
+            title={country.name.common}
+            />
             <div className="country-info-div">
               <h3 className="name">{country.name.official}</h3>
               <p className="population">
@@ -29,6 +31,7 @@ function Countries(props) {
               </p>
             </div>
           </article>
+          </Link>
         ))}
       </div>
     </>
