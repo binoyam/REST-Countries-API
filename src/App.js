@@ -41,7 +41,6 @@ function App() {
 
       setCountries(countries);
       setIsLoading(false);
-
     } catch (error) {
       setIsLoading(false);
       setError(error.message);
@@ -56,7 +55,6 @@ function App() {
       const countries = await response.json();
       setCountries(countries);
       setIsLoading(false);
-
     } catch (error) {
       setIsLoading(false);
       setError(error.message);
@@ -71,7 +69,7 @@ function App() {
     <div className="app">
       <Nav />
       <Search onSelect={getCountryByRegion} onSearch={getCountryByName} />
-      <Countries countries={countries} />
+      <Countries isLoading={isLoading} error={error} countries={countries} />
     </div>
   );
 }
