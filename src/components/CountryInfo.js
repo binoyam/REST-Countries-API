@@ -54,13 +54,13 @@ function CountryInfo() {
           </div>
 {console.log(country)}
           <div className="country-info-content">
-            <h3>{country.name.official}</h3>
+            <h3>{country.name.common}</h3>
 
             <div className="country-info-columns">
               <div className="info-col-1">
                 <p className="native-name">
                   <span className="pre-text">Native Name:</span>{" "}
-                  {/* {country.name.nativeName} */}
+                  {country.name.nativeName[0]}
                 </p>
                 <p className="population">
                   <span className="pre-text">Population:</span>
