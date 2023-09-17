@@ -109,6 +109,15 @@ form img.search-icon {
   gap: 3rem;
 }
 /* individual country grid */
+h4{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--VeryLightGray);
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: 800;
+}
 .countries article {
   background-color: var(--DarkBlue);
   border-radius: 5px;
@@ -149,12 +158,11 @@ form img.search-icon {
 /* selected country info */
 .country-info-wrapper {
   width: 100%;
-  height: 80vh;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 3rem;
-  /* background-color: aquamarine; */
   position: relative;
 }
 .back-btn {
@@ -193,6 +201,7 @@ form img.search-icon {
   width: 50%;
 }
 .country-info-img img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -201,19 +210,24 @@ form img.search-icon {
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 3rem 0;
+  justify-content: space-between;
+  padding: 3rem;
+  padding-right: 0;
 }
 .country-info-content h3 {
-  font-size: 25px;
+  font-size: 40px;
   font-weight: 800;
   color: var(--White);
 }
 .country-info-columns {
   display: flex;
-  align-items: start;
+  align-items:flex-start;
   justify-content: space-between;
 }
+.country-info-columns .pre-text{
+  font-size: 18px;
+}
+
 .native-name,
 .population,
 .region,
@@ -224,5 +238,6 @@ form img.search-icon {
 .languages,
 .border {
   color: var(--VeryLightGray);
-  font-size: 16px;
+  font-size: 18px;
+  margin-bottom: 0.6rem;
 }

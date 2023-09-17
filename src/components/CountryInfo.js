@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import ArrowIcon from '../images/arrow-left.svg'
+import ArrowIcon from "../images/arrow-left.svg";
 const url = "https://restcountries.com/v3.1";
 
 function CountryInfo() {
@@ -52,7 +52,7 @@ function CountryInfo() {
               title={country.name.common}
             />
           </div>
-{console.log(country)}
+          {console.log(country)}
           <div className="country-info-content">
             <h3>{country.name.common}</h3>
 
@@ -60,7 +60,7 @@ function CountryInfo() {
               <div className="info-col-1">
                 <p className="native-name">
                   <span className="pre-text">Native Name:</span>{" "}
-                  {country.name.nativeName[0]}
+                  {country.name.nativeName.eng}
                 </p>
                 <p className="population">
                   <span className="pre-text">Population:</span>
@@ -81,22 +81,22 @@ function CountryInfo() {
               <div className="info-col-2">
                 <p className="domain">
                   <span className="pre-text">Top Level Domain:</span>{" "}
-                  {country.tld[0]}
+                  {/* {country.tld[0]} */}
                 </p>
                 <p className="currencies">
                   <span className="pre-text">Currencies:</span>
-                  {country.currencies[0]}
+                  {/* {country.currencies} */}
                 </p>
                 <p className="languages">
                   <span className="pre-text">Languages:</span>{" "}
-                  {country.languages[0]}
+                  {/* {country.languages} */}
                 </p>
               </div>
             </div>
 
             <p className="border">
               <span className="pre-text">
-                Border Countries:{country.languages[1]}
+                {/* Border Countries:{country.languages[1]} */}
               </span>
             </p>
           </div>
@@ -107,3 +107,10 @@ function CountryInfo() {
 }
 
 export default CountryInfo;
+/* problem rendering object inside object[languages, borders,tld, native name, currenceis] ,
+needs more reading, a function that check if the data from the api
+ has the data i need ,then chooses a data to render from 
+ *style the error message
+ * 
+ 
+ */
