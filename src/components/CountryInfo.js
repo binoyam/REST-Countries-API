@@ -91,18 +91,23 @@ function CountryInfo() {
                   {country.currencies[0]}
                 </p>
                 <p className="languages">
-                  <span className="pre-text">Languages:</span>{" "}
-                  {country.languages[0]}
+                  <span className="pre-text">Languages:</span> {"12"}
                 </p>
               </div>
             </div>
-
-            <p className="border">
-              <span className="pre-text">
-                Borders:
-                {country.borders}
-              </span>
-            </p>
+            <div className="borders-div">
+              <p>
+                <span className="pre-text">
+                  Borders:
+                  {country.borders?.map((b) => (
+                    <Link className="link" to={`/country/${b}`}>
+                      <span className="borders"> {b}</span>
+                    </Link>
+                  ))}
+                </span>
+              </p>
+            </div>
+            <p className="border"></p>
           </div>
         </div>
       ))}
@@ -112,7 +117,6 @@ function CountryInfo() {
 
 export default CountryInfo;
 /* 
- *style the error message
- * make responsive
+ * make responsive for mobile
  
  */
