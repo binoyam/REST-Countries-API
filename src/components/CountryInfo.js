@@ -37,10 +37,13 @@ function CountryInfo() {
 
   return (
     <div className="country-info-wrapper">
-      <button className="back-btn">
-        <img src={ArrowIcon} alt="back arrow" className="arrow-icon" />
-        <Link to="/">Back</Link>
-      </button>
+      <Link className="link" to="/">
+        {" "}
+        <button className="back-btn">
+          <img src={ArrowIcon} alt="back arrow" className="arrow-icon" />
+          Back
+        </button>
+      </Link>
       {isLoading && !error && <h4>Loading...</h4>}
       {error && !isLoading && { error }}
       {country?.map((country) => (
@@ -54,13 +57,13 @@ function CountryInfo() {
           </div>
           {console.log(country)}
           <div className="country-info-content">
-            <h3>{country.name.common}</h3>
+            <h3>{country.name.official}</h3>
 
             <div className="country-info-columns">
               <div className="info-col-1">
                 <p className="native-name">
                   <span className="pre-text">Native Name:</span>{" "}
-                  {country.name.nativeName}
+                  {country.name.common}
                 </p>
                 <p className="population">
                   <span className="pre-text">Population:</span>
@@ -81,21 +84,22 @@ function CountryInfo() {
               <div className="info-col-2">
                 <p className="domain">
                   <span className="pre-text">Top Level Domain:</span>{" "}
-                  {/* {country.tld[0]} */}
+                  {country.tld[0]}
                 </p>
                 <p className="currencies">
                   <span className="pre-text">Currencies:</span>
-                  {/* {country.currencies} */}
+                  {country.currencies[0]}
                 </p>
                 <p className="languages">
                   <span className="pre-text">Languages:</span>{" "}
-                  {/* {country.languages} */}
+                  {country.languages[0]}
                 </p>
               </div>
             </div>
 
             <p className="border">
-              <span className="pre-text">Borders:
+              <span className="pre-text">
+                Borders:
                 {country.borders}
               </span>
             </p>
@@ -107,10 +111,8 @@ function CountryInfo() {
 }
 
 export default CountryInfo;
-/* problem rendering object inside object[languages, borders,tld, native name, currenceis] ,
-needs more reading, a function that check if the data from the api
- has the data i need ,then chooses a data to render from 
+/* 
  *style the error message
- * 
+ * make responsive
  
  */
