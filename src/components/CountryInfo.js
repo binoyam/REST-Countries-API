@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import ArrowIcon from '../images/arrow-left.svg'
 const url = "https://restcountries.com/v3.1";
 
 function CountryInfo() {
@@ -37,7 +37,8 @@ function CountryInfo() {
 
   return (
     <div className="country-info-wrapper">
-      <button>
+      <button className="back-btn">
+        <img src={ArrowIcon} alt="back arrow" className="arrow-icon" />
         <Link to="/">Back</Link>
       </button>
       {isLoading && !error && <h4>Loading...</h4>}
@@ -46,7 +47,7 @@ function CountryInfo() {
         <div className="country-info-container" key={index}>
           <div className="country-info-img">
             <img
-              src={country.flags.png}
+              src={country.flags.svg}
               alt={country.name.common}
               title={country.name.common}
             />
@@ -80,22 +81,22 @@ function CountryInfo() {
               <div className="info-col-2">
                 <p className="domain">
                   <span className="pre-text">Top Level Domain:</span>{" "}
-                  {/* {country.tld} */}
+                  {country.tld[0]}
                 </p>
                 <p className="currencies">
                   <span className="pre-text">Currencies:</span>
-                  {/* {country.currencies} */}
+                  {country.currencies[0]}
                 </p>
                 <p className="languages">
                   <span className="pre-text">Languages:</span>{" "}
-                  {/* {country.languages} */}
+                  {country.languages[0]}
                 </p>
               </div>
             </div>
 
             <p className="border">
               <span className="pre-text">
-                {/* Border Countries:{country.borders} */}
+                Border Countries:{country.languages[1]}
               </span>
             </p>
           </div>

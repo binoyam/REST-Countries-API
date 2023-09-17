@@ -146,8 +146,50 @@ form img.search-icon {
   color: var(--VeryLightGray);
 }
 /* selected country info */
-.country-info-wrapper{
+.country-info-wrapper {
   width: 100%;
-  padding:3rem;
+  padding: 15rem 3rem;
   background-color: aquamarine;
+  position: relative;
+}
+.back-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:10px ;
+  border: none;
+  outline: none;
+  padding:10px;
+  width: 10%;
+  border-radius: 5px;
+  background-color: var(--DarkBlue);
+  box-shadow: 0px 1px 5px 1px var(--VeryDarkBlueText);
+  position: absolute;
+}
+.back-btn .arrow-icon{
+  width: 15px;
+}
+.back-btn a{
+  color: var(--VeryLightGray);
+  font-size: 16px;
+  text-decoration: none;
+}
+.country-info-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.country-info-img {
+  width: 50%;
+}
+.country-info-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.country-info-columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
