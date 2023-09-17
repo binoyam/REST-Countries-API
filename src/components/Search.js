@@ -39,4 +39,3 @@ function Search({ onSearch, onSelect }) {
 }
 
 export default Search;
-/* should search and filter be diffrent components? */
