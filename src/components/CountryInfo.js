@@ -43,8 +43,8 @@ function CountryInfo() {
       </button>
       {isLoading && !error && <h4>Loading...</h4>}
       {error && !isLoading && { error }}
-      {country?.map((country, index) => (
-        <div className="country-info-container" key={index}>
+      {country?.map((country) => (
+        <div className="country-info-container">
           <div className="country-info-img">
             <img
               src={country.flags.svg}
@@ -60,7 +60,7 @@ function CountryInfo() {
               <div className="info-col-1">
                 <p className="native-name">
                   <span className="pre-text">Native Name:</span>{" "}
-                  {country.name.nativeName.eng}
+                  {country.name.nativeName}
                 </p>
                 <p className="population">
                   <span className="pre-text">Population:</span>
@@ -95,8 +95,8 @@ function CountryInfo() {
             </div>
 
             <p className="border">
-              <span className="pre-text">
-                {/* Border Countries:{country.languages[1]} */}
+              <span className="pre-text">Borders:
+                {country.borders}
               </span>
             </p>
           </div>
