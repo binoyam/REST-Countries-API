@@ -88,10 +88,10 @@ function CountryInfo() {
                 </p>
                 <p className="currencies">
                   <span className="pre-text">Currencies:</span>
-                  {country.currencies[0]}
+                  {"N/A"}
                 </p>
                 <p className="languages">
-                  <span className="pre-text">Languages:</span> {"12"}
+                  <span className="pre-text">Languages:</span> {"N/A"}
                 </p>
               </div>
             </div>
@@ -116,7 +116,4 @@ function CountryInfo() {
 }
 
 export default CountryInfo;
-/* 
- * make responsive for mobile
- 
- */
+
