@@ -105,7 +105,7 @@ form img.search-icon {
   margin-top: 1rem;
   padding-bottom: 2rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 3rem;
 }
 /* individual country grid */
@@ -119,6 +119,9 @@ h4 {
   font-weight: 800;
 }
 .countries article {
+  min-width: 260px;
+  width: 100%;
+  max-width: 260px;
   background-color: var(--DarkBlue);
   border-radius: 5px;
   overflow: hidden;
@@ -260,4 +263,9 @@ h4 {
   font-size: 16px;
   background-color: var(--DarkBlue);
   cursor: pointer;
+}
+@media only screen and (max-width:550px) {
+    .select{
+      width: 150px;
+    }
 }

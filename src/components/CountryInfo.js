@@ -8,7 +8,6 @@ function CountryInfo() {
   const [country, setCountry] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
-
   const { countryName } = useParams();
 
   useEffect(() => {
@@ -99,9 +98,9 @@ function CountryInfo() {
               <p>
                 <span className="pre-text">
                   Borders:
-                  {country.borders?.map((b) => (
+                  {country.borders?.map((b, index) => (
                     <Link className="link" to={`/country/${b}`}>
-                      <span className="borders"> {b}</span>
+                      <span className="borders">{b}</span>
                     </Link>
                   ))}
                 </span>
@@ -116,4 +115,3 @@ function CountryInfo() {
 }
 
 export default CountryInfo;
-
