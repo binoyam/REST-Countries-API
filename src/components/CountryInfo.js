@@ -87,10 +87,17 @@ function CountryInfo() {
                 </p>
                 <p className="currencies">
                   <span className="pre-text">Currencies:</span>
-                  {"N/A"}
+                  {Object.keys(country.currencies).map((curr, i) => (
+                    <span key={i}>{curr}</span>
+                  ))}
                 </p>
                 <p className="languages">
-                  <span className="pre-text">Languages:</span> {"N/A"}
+                  <span className="pre-text">Languages:</span>
+                  {country &&
+                    country.languages &&
+                    Object.values(country.languages)
+                      .map((lang) => lang)
+                      .join(", ")}
                 </p>
               </div>
             </div>
@@ -98,11 +105,21 @@ function CountryInfo() {
               <p>
                 <span className="pre-text">
                   Borders:
-                  {country.borders?.map((b, index) => (
-                    <Link className="link" to={`/country/${b}`}>
-                      <span className="borders">{b}</span>
-                    </Link>
-                  ))}
+                  {Array.isArray(country.borders) ? (
+                    country.borders.length === 0 ? (
+                      <span> No border countries</span>
+                    ) : (
+                      country.borders.map((b, index) => (
+                        <Link className="link" to={`/country/${b}`}>
+                          <span key={index} className="borders">
+                            {b}
+                          </span>
+                        </Link>
+                      ))
+                    )
+                  ) : (
+                    <span> No border countries</span>
+                  )}
                 </span>
               </p>
             </div>

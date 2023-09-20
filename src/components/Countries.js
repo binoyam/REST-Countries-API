@@ -73,7 +73,7 @@ function Countries() {
         {error && !isLoading && <h4>{error}</h4>}
 
         {countries?.map((country) => (
-          <Link className='link' to={`/country/${country.name.common}`}>
+          <Link className='link' to={`/country/${country.name.official}`}>
             <article key={country.name.official}>
               {console.log(country)}
               <img
