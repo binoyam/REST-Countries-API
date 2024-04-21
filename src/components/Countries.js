@@ -63,7 +63,7 @@ function Countries() {
   useEffect(() => {
     countryData();
   }, []);
-
+console.log(countries);
   return (
     <>
       <Search onSelect={getCountryByRegion} onSearch={getCountryByName} />
@@ -72,10 +72,9 @@ function Countries() {
         {isLoading && !error && <h4>Loading........</h4>}
         {error && !isLoading && <h4>{error}</h4>}
 
-        {countries?.map((country) => (
-          <Link className='link' to={`/country/${country.name.official}`}>
+        {countries?.map((country, index) => (
+          <Link key={index} className='link' to={`/country/${country.name.official}`}>
             <article key={country.name.official}>
-              {console.log(country)}
               <img
                 src={country.flags.png}
                 alt={country.name.common}

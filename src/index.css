@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap');
 :root {
   /*  (Dark Mode Elements)  */
   --DarkBlue: hsl(209, 23%, 22%);
@@ -17,7 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 body {
   width: 100%;
@@ -163,9 +163,8 @@ h4 {
   width: 100%;
   height: auto;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  /* justify-content: center; */
+  align-items: center;
   padding: 0 3rem 3rem;
   position: relative;
 }
@@ -231,10 +230,10 @@ h4 {
   align-items: flex-start;
   justify-content: space-between;
 }
-.country-info-columns .info-col-1{
+.country-info-columns .info-col-1 {
   width: 50%;
 }
-.country-info-columns .info-col-2{
+.country-info-columns .info-col-2 {
   width: 50%;
   padding-left: 3rem;
 }
@@ -260,7 +259,7 @@ h4 {
   color: var(--VeryLightGray);
 }
 /*border countries */
-.borders-div{
+.borders-div {
   display: flex;
   flex-wrap: wrap;
 }
@@ -273,8 +272,8 @@ h4 {
   background-color: var(--DarkBlue);
   cursor: pointer;
 }
-@media only screen and (max-width:550px) {
-    .select{
-      width: 150px;
-    }
+@media only screen and (max-width: 550px) {
+  .select {
+    width: 150px;
+  }
 }
