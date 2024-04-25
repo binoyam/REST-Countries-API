@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
+// import { Link } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import data from '../data.json';
-function AllCountries() {
-  const countires = data;
+// eslint-disable-next-line react/prop-types
+function AllCountries({ countries }) {
   return (
     <div className="countries_list">
-      {countires.map((country, index) => (
-        <Link to='/' key={index}>
+      {countries.map((country, index) => (
+        <Link to={`/countries/${country.name}`} className="link" key={index}>
           <article>
             <img src={country.flag} alt="flag" />
             <div className="country_info">

@@ -1,5 +1,5 @@
 import SearchIcon from '../assets/search-icon.svg';
-
+// eslint-disable-next-line react/prop-types
 function SearchFilter() {
   return (
     <div className="search_filter">
@@ -9,11 +9,12 @@ function SearchFilter() {
         <img src={SearchIcon} alt="Search" />
       </div>
       <div className="filter">
-        <select name="" id="">
+        <select>
           <option value="">Filter by Region</option>
           <option value="Africa">Africa</option>
-          <option value="America">America</option>
+          <option value="Americas">Americas</option>
           <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>
         </select>
       </div>
