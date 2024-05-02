@@ -10,7 +10,7 @@ function CountryDescription() {
   );
 
   return (
-    <div>
+    <div className='country_description'>
       <h1>{selectedCountry.name}</h1>
       <img src={selectedCountry.flag} />
     </div>
