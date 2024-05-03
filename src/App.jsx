@@ -2,7 +2,7 @@
 import './index.css';
 import Header from './components/Header';
 import AllCountries from './components/AllCountries';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import CountryDescription from './components/CountryDescription';
 import SearchFilter from './components/SearchFilter';
 import { useState } from 'react';
@@ -20,21 +20,32 @@ function App({ countries }) {
       setFilteredCountries(countries);
     }
   };
+  const location = useLocation();
   return (
     <div className="App">
       <Header />
-      <SearchFilter
-        setFilteredCountries={setFilteredCountries}
-        countries={countries}
-      />
       <Routes>
         <Route
           path="/"
-          element={<AllCountries countries={filteredCountries} />}
+          element={
+            <>
+              {location.pathname !== '/countries/:countryName' && (
+                <SearchFilter
+                  setFilteredCountries={setFilteredCountries}
+                  countries={countries}
+                />
+              )}
+              <AllCountries countries={filteredCountries} />
+            </>
+          }
+        />
+         <Route
+          path="/"
+          element={ <AllCountries countries={filteredCountries} />}
         />
         <Route
           path="/countries/:countryName"
-          element={<CountryDescription />}
+          element={<CountryDescription countries={countries} />}
         />
       </Routes>
     </div>
