@@ -2,11 +2,23 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import SearchIcon from '../assets/search-icon.svg';
+import './SearchFilter.css';
 // eslint-disable-next-line react/prop-types
 function SearchFilter({ setFilteredCountries, countries }) {
   const [selectedRegion, setSelectedRegion] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  // const [searchResults, setSearchResults] = useState([]);
 
-  const handleSelectChange = (event) => {
+  const handleSearch = (event) => {
+    const searchTerm = event.target.value.toLowerCase();
+    setSearchTerm(searchTerm);
+
+    const filteredResults = countries.filter((country) =>
+      country.name.toLowerCase().includes(searchTerm)
+    );
+    setFilteredCountries(filteredResults);
+  };
+  const handleRegionChange = (event) => {
     const selectedRegion = event.target.value;
     setSelectedRegion(selectedRegion);
     const filteredCountries = selectedRegion
@@ -19,11 +31,17 @@ function SearchFilter({ setFilteredCountries, countries }) {
     <div className="search_filter">
       <div className="search_bar">
         <label htmlFor="search"></label>
-        <input type="text" id="search" placeholder="Search for a country..." />
+        <input
+          value={searchTerm}
+          onChange={handleSearch}
+          type="text"
+          id="search"
+          placeholder="Search for a country..."
+        />
         <img src={SearchIcon} alt="Search" />
       </div>
       <div className="filter">
-        <select value={selectedRegion} onChange={handleSelectChange}>
+        <select value={selectedRegion} onChange={handleRegionChange}>
           <option value="">Filter by Region</option>
           <option value="Africa">Africa</option>
           <option value="Americas">Americas</option>

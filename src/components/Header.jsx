@@ -1,4 +1,5 @@
 import MoonIcon from '../assets/moon-icon.svg';
+import './Header.css';
 
 function Header() {
   return (

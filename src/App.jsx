@@ -9,17 +9,6 @@ import { useState } from 'react';
 
 function App({ countries }) {
   const [filteredCountries, setFilteredCountries] = useState(countries);
-
-  const filterCountries = (selectedContinent) => {
-    if (selectedContinent) {
-      const filtered = countries.filter(
-        (country) => country.continent === selectedContinent
-      );
-      setFilteredCountries(filtered);
-    } else {
-      setFilteredCountries(countries);
-    }
-  };
   const location = useLocation();
   return (
     <div className="App">
@@ -39,9 +28,9 @@ function App({ countries }) {
             </>
           }
         />
-         <Route
+        <Route
           path="/countries"
-          element={ <AllCountries countries={filteredCountries} />}
+          element={<AllCountries countries={filteredCountries} />}
         />
         <Route
           path="/countries/:countryName"

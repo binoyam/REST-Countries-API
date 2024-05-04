@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
+// eslint-disable-next-l☺ine react/prop-types
 import { Link } from 'react-router-dom';
-// eslint-disable-next-line react/prop-types
+import './AllCountries.css'
 function AllCountries({ countries }) {
   return (
     <div className="countries_list">
