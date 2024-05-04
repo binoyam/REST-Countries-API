@@ -13,7 +13,7 @@ function AllCountries({ countries }) {
               <h3 className="name">{country.name}</h3>
               <p className="population">
                 <span className="pre_text">Population:</span>
-                {country.population}
+                {country.population.toLocaleString()}
               </p>
               <p className="region">
                 <span className="pre_text">Region:</span>

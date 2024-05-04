@@ -26,6 +26,7 @@
 }
 input::placeholder {
   color: var(--VeryLightGray);
+  letter-spacing: 1px;
 }
 .search_bar img {
   position: absolute;

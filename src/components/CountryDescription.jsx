@@ -9,16 +9,12 @@ function CountryDescription({ countries }) {
     (country) => country.name === countryName
   );
   const getCountryFullName = (borderCode) => {
-    console.log(borderCode);
     const foundCountry = countries.find((country) =>
       country.alpha3Code.includes(borderCode)
     );
-
     return foundCountry ? foundCountry.name : '';
   };
-  // const getCountryByAlphaCode = (alphaCode) => {
-  //   return countries.find((country) => country.alpha3Code === alphaCode);
-  // };
+
   return (
     <section className="country_description">
       <Link className="back_btn" to="/">
@@ -35,44 +31,44 @@ function CountryDescription({ countries }) {
         <div className="country_info_details">
           <h1 className="country_title">{selectedCountry.name}</h1>
           <div className="detail_cols">
-            <div className="col">
-              <p>
-                <span className="pre_text">Native Name: </span>
+            <div className="col1">
+              <div className="vals">
+                <span className="pre-text">Native Name:</span>
                 {selectedCountry.nativeName}
-              </p>
-              <p>
-                <span className="pre_text">Population: </span>
+              </div>
+              <div className="vals">
+                <span className="pre-text">Population:</span>
                 {selectedCountry.population.toLocaleString()}
-              </p>
-              <p>
-                <span className="pre_text">Region: </span>
+              </div>
+              <div className="vals">
+                <span className="pre-text">Region:</span>
                 {selectedCountry.region}
-              </p>
-              <p>
-                <span className="pre_text">Sub Region: </span>
+              </div>
+              <div className="vals">
+                <span className="pre-text">Sub Region:</span>
                 {selectedCountry.subregion}
-              </p>
-              <p>
-                <span className="pre_text">Capital: </span>
+              </div>
+              <div className="vals">
+                <span className="pre-text">Capital:</span>
                 {selectedCountry.capital}
-              </p>
+              </div>
             </div>
-            <div className="col">
-              <p>
-                <span className="pre_text">Top Level Domain: </span>
-                {selectedCountry.topLevelDomain[0]}
-              </p>
-              <div className="flex">
-                <span className="pre_text">Currencies: </span>
+            <div className="col2">
+              <div className="vals">
+                <span className="pre-text">Top Level Domain:</span>
+                {selectedCountry.topLevelDomain}
+              </div>
+              <div className="vals curs">
+                <span className="pre-text">Currencies:</span>
                 {selectedCountry.currencies.map((currency, index) => (
-                  <div key={currency.code}>
+                  <div key={index}>
                     {index > 0 && ', '}
                     {currency.name}
                   </div>
                 ))}
               </div>
-              <div className="flex">
-                <span className="pre_text">Languages: </span>
+              <div className="vals langs">
+                <span className="pre-text">Languages:</span>
                 {selectedCountry.languages.map((language, index) => (
                   <div key={language.iso639_1}>
                     {index > 0 && ', '}
@@ -82,17 +78,23 @@ function CountryDescription({ countries }) {
               </div>
             </div>
           </div>
-          <div className="borders_wrapper flex">
-            <p>Border Countries: </p>
-            {selectedCountry.borders && selectedCountry.borders.length > 0 ? (
-              selectedCountry.borders.map((border, index) => (
-                <div className="border_country" key={index}>
-                  {getCountryFullName(border)}
-                </div>
-              ))
-            ) : (
-              <div className="border_country">None</div>
-            )}
+          <div className="vals borders">
+            <span className="pre-text fixed">Border Countries:</span>
+            <div className="borders_list">
+              {selectedCountry.borders && selectedCountry.borders.length > 0 ? (
+                selectedCountry.borders.map((border, index) => (
+                  <Link
+                    key={index}
+                    className="border_country_link"
+                    to={`/countries/${getCountryFullName(border)}`}
+                  >
+                    {getCountryFullName(border).slice(0, 20)}
+                  </Link>
+                ))
+              ) : (
+                <div className="border_country_link">None</div>
+              )}
+            </div>
           </div>
         </div>
       </div>
