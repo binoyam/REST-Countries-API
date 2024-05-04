@@ -16,6 +16,9 @@ function CountryDescription({ countries }) {
 
     return foundCountry ? foundCountry.name : '';
   };
+  // const getCountryByAlphaCode = (alphaCode) => {
+  //   return countries.find((country) => country.alpha3Code === alphaCode);
+  // };
   return (
     <section className="country_description">
       <Link className="back_btn" to="/">
