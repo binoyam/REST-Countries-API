@@ -23,44 +23,56 @@ function CountryDescription({ countries }) {
           />
         </div>
         <div className="country_info_details">
-          <h1>{selectedCountry.name}</h1>
-          <div className="cols">
-            <div>
+          <h1 className="country_title">{selectedCountry.name}</h1>
+          <div className="detail_cols">
+            <div className="col">
               <p>
-                <span className="pre_text">Region: </span>
-                {selectedCountry.name}
+                <span className="pre_text">Native Name: </span>
+                {selectedCountry.nativeName}
+              </p>
+              <p>
+                <span className="pre_text">Population: </span>
+                {selectedCountry.population.toLocaleString()}
               </p>
               <p>
                 <span className="pre_text">Region: </span>
-                {selectedCountry.name}
+                {selectedCountry.region}
               </p>
               <p>
-                <span className="pre_text">Region: </span>
-                {selectedCountry.name}
+                <span className="pre_text">Sub Region: </span>
+                {selectedCountry.subregion}
               </p>
               <p>
-                <span className="pre_text">Region: </span>
-                {selectedCountry.name}
-              </p>
-            </div>
-            <div>
-              <p>
-                <span className="pre_text">Region: </span>
-                {selectedCountry.name}
-              </p>
-              <p>
-                <span className="pre_text">Region: </span>
-                {selectedCountry.name}
-              </p>
-              <p>
-                <span className="pre_text">Region: </span>
-                {selectedCountry.name}
-              </p>
-              <p>
-                <span className="pre_text">Region: </span>
-                {selectedCountry.name}
+                <span className="pre_text">Capital: </span>
+                {selectedCountry.capital}
               </p>
             </div>
+            <div className="col">
+              <p>
+                <span className="pre_text">Top Level Domain: </span>
+                {selectedCountry.topLevelDomain[0]}
+              </p>
+              <div className="flex">
+                <span className="pre_text">Currencies: </span>
+                {selectedCountry.currencies.map((currency) => (
+                  <div key={currency.code}>{currency.name}</div>
+                ))}
+              </div>
+              <div className="flex">
+                <span className="pre_text">Languages: </span>
+                {selectedCountry.languages.map((language) => (
+                  <div key={language.iso639_1}>{language.name}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="borders_wrapper flex">
+            <p>Border Countries: </p>
+            {selectedCountry.borders?.map((border, index) => (
+              <div className="border_country" key={index}>
+                {border}
+              </div>
+            ))}
           </div>
         </div>
       </div>

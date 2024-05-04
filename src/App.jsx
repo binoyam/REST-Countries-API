@@ -40,7 +40,7 @@ function App({ countries }) {
           }
         />
          <Route
-          path="/"
+          path="/countries"
           element={ <AllCountries countries={filteredCountries} />}
         />
         <Route
