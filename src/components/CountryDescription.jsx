@@ -8,7 +8,14 @@ function CountryDescription({ countries }) {
   const selectedCountry = countries.find(
     (country) => country.name === countryName
   );
+  const getCountryFullName = (borderCode) => {
+    console.log(borderCode);
+    const foundCountry = countries.find((country) =>
+      country.alpha3Code.includes(borderCode)
+    );
 
+    return foundCountry ? foundCountry.name : '';
+  };
   return (
     <section className="country_description">
       <Link className="back_btn" to="/">
@@ -77,7 +84,7 @@ function CountryDescription({ countries }) {
             {selectedCountry.borders && selectedCountry.borders.length > 0 ? (
               selectedCountry.borders.map((border, index) => (
                 <div className="border_country" key={index}>
-                  {border}
+                  {getCountryFullName(border)}
                 </div>
               ))
             ) : (

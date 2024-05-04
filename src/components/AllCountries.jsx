@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './AllCountries.css'
 function AllCountries({ countries }) {
   return (
-    <div className="countries_list">
+    <section className="countries_list">
       {countries.map((country, index) => (
         <Link to={`/countries/${country.name}`} className="link" key={index}>
           <article>
@@ -27,7 +27,7 @@ function AllCountries({ countries }) {
           </article>
         </Link>
       ))}
-    </div>
+    </section>
   );
 }
 
