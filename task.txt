@@ -1,3 +1,6 @@
 on small screen
 country article height 
 description page responsiveness
+theme switcher
+search bar
+switch filter from select option to manual using array of regions
