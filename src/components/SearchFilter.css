@@ -20,13 +20,14 @@
   outline: none;
   padding: 1rem 1rem 1rem 3.5rem;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
   background-color: var(--DarkBlue);
   color: var(--VeryLightGray);
 }
 input::placeholder {
   color: var(--VeryLightGray);
   letter-spacing: 1px;
+  font-size: 14px;
 }
 .search_bar img {
   position: absolute;
@@ -40,17 +41,55 @@ input::placeholder {
 /* FILTER */
 .filter {
   width: 250px;
-}
-select {
-  width: 100%;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
   background-color: var(--DarkBlue);
+  border-radius: 5px;
+  font-size: 14px;
+  color: var(--VeryLightGray);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.filter_title{
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filter_title img{
+  width: 15px;
+  height: 15px;
+}
+.regions {
+  padding: 0.8rem 0;
+  position: absolute;
+  width: 100%;
+  top: 3.7rem;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  border-radius: 5px;
   border: none;
   outline: none;
+  z-index: 9999;
+  background-color: var(--DarkBlue);
+}
+.region_option{
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  color: var(--VeryLightGray);
+  width: 100%;
+  font-weight: 500;
+  padding: 5px 1rem;
+
+}
+.region_option:hover{
+  background-color:var(--VeryDarkBlue) ;
+  color: var(--White);
 }
 @media only screen and (max-width: 720px) {
   .search_filter {

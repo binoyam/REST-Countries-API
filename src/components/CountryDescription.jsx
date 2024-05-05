@@ -24,7 +24,7 @@ function CountryDescription({ countries }) {
       <div className="country_info_container">
         <div className="country_flag">
           <img
-            src={selectedCountry.flags.svg}
+            src={selectedCountry.flag}
             alt={`${selectedCountry.name}'s flag`}
           />
         </div>
@@ -50,7 +50,7 @@ function CountryDescription({ countries }) {
               </div>
               <div className="vals">
                 <span className="pre-text">Capital:</span>
-                {selectedCountry.capital}
+                {selectedCountry.capital ? selectedCountry.capital : 'N/A'}
               </div>
             </div>
             <div className="col2">
@@ -60,18 +60,21 @@ function CountryDescription({ countries }) {
               </div>
               <div className="vals curs">
                 <span className="pre-text">Currencies:</span>
-                {selectedCountry.currencies.map((currency, index) => (
-                  <div key={index}>
-                    {index > 0 && ', '}
-                    {currency.name}
-                  </div>
-                ))}
+                {selectedCountry.currencies
+                  ? selectedCountry.currencies.map((currency, index) => (
+                      <div key={index}>
+                        {index > 0 && ', '}
+                        {currency.name}
+                      </div>
+                    ))
+                  : 'N/A'}
               </div>
               <div className="vals langs">
                 <span className="pre-text">Languages:</span>
                 {selectedCountry.languages.map((language, index) => (
-                  <div key={language.iso639_1}>
-                    {index > 0 && ', '}{language.name}
+                  <div key={index}>
+                    {index > 0 && ', '}
+                    {language.name}
                   </div>
                 ))}
               </div>
