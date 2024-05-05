@@ -52,7 +52,7 @@ select {
   font-size: 16px;
   color: var(--VeryLightGray);
 }
-@media only screen and (max-width: 720px){
+@media only screen and (max-width: 720px) {
   .search_filter {
     padding: 1rem 1.5rem;
     flex-direction: column;

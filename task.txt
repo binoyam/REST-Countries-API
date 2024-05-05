@@ -1,0 +1,3 @@
+on small screen
+country article height 
+description page responsiveness
