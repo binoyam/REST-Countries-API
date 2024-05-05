@@ -28,3 +28,8 @@
   height: 15px;
   object-fit: contain;
 }
+@media only screen and (max-width: 720px) {
+  .header {
+    padding: 1rem;
+  }
+}

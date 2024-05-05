@@ -10,7 +10,7 @@
   margin: 2rem 0;
 }
 .search_bar {
-  width: 40%;
+  width: 42%;
   position: relative;
 }
 .search_bar input {
@@ -51,4 +51,18 @@ select {
   border-radius: 5px;
   font-size: 16px;
   color: var(--VeryLightGray);
+}
+@media only screen and (max-width: 720px){
+  .search_filter {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .search_bar {
+    width: 100%;
+  }
+  .filter {
+    width: 60%;
+  }
 }

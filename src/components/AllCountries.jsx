@@ -8,7 +8,7 @@ function AllCountries({ countries }) {
       {countries.map((country, index) => (
         <Link to={`/countries/${country.name}`} className="link" key={index}>
           <article>
-            <img src={country.flag} alt="flag" />
+            <img src={country.flags.png} alt="flag" />
             <div className="country_info">
               <h3 className="name">{country.name}</h3>
               <p className="population">

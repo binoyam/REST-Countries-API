@@ -71,8 +71,7 @@ function CountryDescription({ countries }) {
                 <span className="pre-text">Languages:</span>
                 {selectedCountry.languages.map((language, index) => (
                   <div key={language.iso639_1}>
-                    {index > 0 && ', '}
-                    {language.name}
+                    {index > 0 && ', '}{language.name}
                   </div>
                 ))}
               </div>
