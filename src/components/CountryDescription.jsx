@@ -2,7 +2,10 @@
 import BackIcon from '../assets/arrow-left.svg';
 import { Link, useParams } from 'react-router-dom';
 import './CountryDescription.css';
+import { ThemeContext } from '../ThemeContext';
+import { useContext } from 'react';
 function CountryDescription({ countries }) {
+  const { darkTheme } = useContext(ThemeContext);
   const { countryName } = useParams();
 
   const selectedCountry = countries.find(
@@ -16,7 +19,7 @@ function CountryDescription({ countries }) {
   };
 
   return (
-    <section className="country_description">
+    <section className={`country_description ${darkTheme ? '' : 'light_mode'}`}>
       <Link className="back_btn" to="/">
         <img src={BackIcon} alt="back" />
         Back

@@ -6,3 +6,8 @@ search bar
 switch filter from select option to manual using array of regions
 
 RESEARCH ON WIDTH,MAX-WIDTH,,MIN-WIDTH!!! SPECIALLY FOR IMAGES!!!!!!
+
+themeswitcher context!!
+giving the same class name for elements with
+same styles
+function to store classnames in components to reduce repeated {`filter ${darkTheme ? "" : "light_mode"}`} templating like this

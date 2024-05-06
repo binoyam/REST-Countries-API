@@ -5,15 +5,20 @@ import AllCountries from './components/AllCountries';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import CountryDescription from './components/CountryDescription';
 import SearchFilter from './components/SearchFilter';
-import { useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
+import ThemeToggle from './ThemeToggle';
+import { ThemeContext } from './ThemeContext';
 
 function App({ countries }) {
+  const { darkTheme } = useContext(ThemeContext);
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const location = useLocation();
- 
+
   return (
-    <div className="App">
+    <div className={`App ${darkTheme ? "" : "light_mode"}`}>
       <Header />
+
+      <ThemeToggle />
       <Routes>
         <Route
           path="/"

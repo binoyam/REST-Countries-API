@@ -1,16 +1,10 @@
-import MoonIcon from '../assets/moon-icon.svg';
+import ThemeToggle from '../ThemeToggle';
 import './Header.css';
-
 function Header() {
   return (
     <div className="header">
       <p className="header_txt">Where in the world?</p>
-      <div className="theme_switch_div">
-        <div className="icon">
-          <img src={MoonIcon} alt="Moon" />
-        </div>
-        <p className="mode">Dark Mode</p>
-      </div>
+      <ThemeToggle />
     </div>
   );
 }

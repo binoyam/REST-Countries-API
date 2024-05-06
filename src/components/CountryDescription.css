@@ -9,6 +9,9 @@
   padding: 6rem 3rem 1rem;
   position: relative;
 }
+.light_mode{
+  color: var(--VeryDarkBlueText);
+}
 .back_btn {
   display: flex;
   align-items: center;

@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line react/prop-types
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import SearchIcon from '../assets/search-icon.svg';
 import DownArrow from '../assets/down_arrow.svg';
 import './SearchFilter.css';
-
+import { ThemeContext } from '../ThemeContext';
 function SearchFilter({ setFilteredCountries, countries }) {
+  const { darkTheme } = useContext(ThemeContext);
   const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   const [selectedRegion, setSelectedRegion] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
@@ -52,7 +53,7 @@ function SearchFilter({ setFilteredCountries, countries }) {
         <img src={SearchIcon} alt="Search" />
       </div>
 
-      <div className="filter">
+      <div className={`filter ${darkTheme ? "" : "light_mode"}`}>
         <div
           onClick={() => setShowOptions(!showOptions)}
           className="filter_title"
