@@ -4,3 +4,5 @@ description page responsiveness
 theme switcher
 search bar
 switch filter from select option to manual using array of regions
+
+RESEARCH ON WIDTH,MAX-WIDTH,,MIN-WIDTH!!! SPECIALLY FOR IMAGES!!!!!!

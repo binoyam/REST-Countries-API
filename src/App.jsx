@@ -5,11 +5,12 @@ import AllCountries from './components/AllCountries';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import CountryDescription from './components/CountryDescription';
 import SearchFilter from './components/SearchFilter';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App({ countries }) {
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const location = useLocation();
+ 
   return (
     <div className="App">
       <Header />
