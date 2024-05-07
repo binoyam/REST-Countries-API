@@ -3,7 +3,9 @@
 // eslint-disable-next-line react/prop-types
 import { useContext, useState } from 'react';
 import SearchIcon from '../assets/search-icon.svg';
+import SearchIconLight from '../assets/search-icon-light.svg';
 import DownArrow from '../assets/down_arrow.svg';
+import DownArrowLight from '../assets/down_arrow_light.svg';
 import './SearchFilter.css';
 import { ThemeContext } from '../ThemeContext';
 function SearchFilter({ setFilteredCountries, countries }) {
@@ -40,29 +42,29 @@ function SearchFilter({ setFilteredCountries, countries }) {
   };
   return (
     <div className="search_filter">
-
       <div className="search_bar">
         <label htmlFor="search"></label>
         <input
+          className={`search_input ${darkTheme ? '' : 'light_mode_search'}`}
           value={searchTerm}
           onChange={handleSearch}
           type="text"
           id="search"
           placeholder="Search for a country..."
         />
-        <img src={SearchIcon} alt="Search" />
+        <img src={darkTheme ? SearchIcon : SearchIconLight} alt="Search" />
       </div>
 
-      <div className={`filter ${darkTheme ? "" : "light_mode"}`}>
+      <div className={`filter ${darkTheme ? '' : 'light_mode_filter'}`}>
         <div
           onClick={() => setShowOptions(!showOptions)}
           className="filter_title"
         >
           {selectedRegion ? selectedRegion : 'Filter By Region'}
-          <img src={DownArrow} alt="down arrow" />
+          <img src={darkTheme ? DownArrow : DownArrowLight} alt="down arrow" />
         </div>
         {showOptions && (
-          <ul className="regions">
+          <ul className={`regions ${darkTheme ? '' : 'light_mode_regions'}`}>
             {regions.map((region, index) => (
               <li
                 className="region_option"
@@ -75,7 +77,6 @@ function SearchFilter({ setFilteredCountries, countries }) {
           </ul>
         )}
       </div>
-      
     </div>
   );
 }

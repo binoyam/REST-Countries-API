@@ -8,12 +8,13 @@
   align-items: center;
   justify-content: space-between;
   margin: 2rem 0;
+
 }
 .search_bar {
   width: 42%;
   position: relative;
 }
-.search_bar input {
+.search_input {
   width: 100%;
   height: 100%;
   border: none;
@@ -23,12 +24,14 @@
   font-size: 14px;
   background-color: var(--DarkBlue);
   color: var(--VeryLightGray);
+  transition: all 0.3s ease-out;
 }
-input::placeholder {
+.search_input::placeholder {
   color: var(--VeryLightGray);
   letter-spacing: 1px;
   font-size: 14px;
 }
+
 .search_bar img {
   position: absolute;
   left: 1.5rem;
@@ -52,7 +55,7 @@ input::placeholder {
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
-.filter_title{
+.filter_title {
   padding: 1rem;
   display: block;
   width: 100%;
@@ -60,7 +63,7 @@ input::placeholder {
   align-items: center;
   justify-content: space-between;
 }
-.filter_title img{
+.filter_title img {
   width: 15px;
   height: 15px;
 }
@@ -80,15 +83,14 @@ input::placeholder {
   z-index: 9999;
   background-color: var(--DarkBlue);
 }
-.region_option{
+.region_option {
   cursor: pointer;
   width: 100%;
   font-weight: 500;
   padding: 5px 1rem;
-
 }
-.region_option:hover{
-  background-color:var(--VeryDarkBlue) ;
+.region_option:hover {
+  background-color: var(--VeryDarkBlue);
   color: var(--White);
 }
 @media only screen and (max-width: 720px) {
@@ -105,7 +107,16 @@ input::placeholder {
     width: 60%;
   }
 }
-.light_mode{
+.light_mode_filter,.light_mode_search {
   background-color: var(--White);
-  color: var(  --DarkBlue);
+  color: var(--VeryDarkBlueText);
+  box-shadow: 0px 1px 5px 1px var(--DarkGrayShade);
+}
+
+.light_mode_search::placeholder {
+  color: var(--DarkBlue);
+}
+.light_mode_regions{
+  background-color: var(--White);
+  color: var(--VeryDarkBlueText);
 }

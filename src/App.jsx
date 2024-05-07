@@ -6,7 +6,6 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import CountryDescription from './components/CountryDescription';
 import SearchFilter from './components/SearchFilter';
 import { useContext, useState } from 'react';
-import ThemeToggle from './ThemeToggle';
 import { ThemeContext } from './ThemeContext';
 
 function App({ countries }) {
@@ -15,10 +14,9 @@ function App({ countries }) {
   const location = useLocation();
 
   return (
-    <div className={`App ${darkTheme ? "" : "light_mode"}`}>
+    <div className={`App ${darkTheme ? "" : "light_mode_app"}`}>
       <Header />
 
-      <ThemeToggle />
       <Routes>
         <Route
           path="/"

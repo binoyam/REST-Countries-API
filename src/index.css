@@ -4,13 +4,14 @@
   --DarkBlue: hsl(209, 23%, 22%);
 
   /*  (Dark Mode Background)  */
-  --VeryDarkBlue: hsl(207, 26%, 17%);
+  --VeryDarkBlue: hsl(209, 26%, 17%);
 
   /*  (Light Mode Text)  */
-  --VeryDarkBlueText: hsl(200, 15%, 8%);
+  --VeryDarkBlueText: #111517;
 
   /*   (Light Mode Input) */
   --DarkGray: hsl(0, 0%, 52%);
+  --DarkGrayShade: hsl(0, 0%, 83%);
 
   /*   (Light Mode Background) */
   --VeryLightGray: hsl(0, 0%, 98%);
@@ -29,12 +30,15 @@
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--VeryDarkBlue);
   font-size: 14px;
 }
 .App {
   width: 100%;
+  background-color: var(--VeryDarkBlue);
   min-height: 100vh;
+}
+a{
+  text-decoration: none;
 }
 img {
   max-width: 100%;
@@ -57,7 +61,7 @@ ul{
   height: 15px;
   object-fit: contain;
 }
-.light_mode{
+.light_mode_app{
   background-color: var(--VeryLightGray);
   color: var(--VeryDarkBlueText);
 }

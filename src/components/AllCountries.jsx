@@ -1,26 +1,41 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-l☺ine react/prop-types
 import { Link } from 'react-router-dom';
-import './AllCountries.css'
+import { useContext } from 'react';
+import { ThemeContext } from '../ThemeContext';
+import './AllCountries.css';
 function AllCountries({ countries }) {
+  const { darkTheme } = useContext(ThemeContext);
   return (
     <section className="countries_list">
       {countries.map((country, index) => (
-        <Link to={`/countries/${country.name}`} className="link" key={index}>
+        <Link
+          to={`/countries/${country.name}`}
+          className={`link ${!darkTheme && 'bg_l'}`}
+          key={index}
+        >
           <article>
             <img src={country.flags.png} alt="flag" />
             <div className="country_info">
-              <h3 className="name">{country.name}</h3>
-              <p className="population">
-                <span className="pre_text">Population:</span>
+              <h3 className={`name ${!darkTheme && 'light'}`}>
+                {country.name}
+              </h3>
+              <p className={`population ${!darkTheme && 'light'}`}>
+                <span className={`pre_text ${!darkTheme && 'light_pre'}`}>
+                  Population:
+                </span>
                 {country.population.toLocaleString()}
               </p>
-              <p className="region">
-                <span className="pre_text">Region:</span>
+              <p className={`region ${!darkTheme && 'light'}`}>
+                <span className={`pre_text ${!darkTheme && 'light_pre'}`}>
+                  Region:
+                </span>
                 {country.region}
               </p>
-              <p className="capital">
-                <span className="pre_text">Capital:</span>
+              <p className={`capital ${!darkTheme && 'light'}`}>
+                <span className={`pre_text ${!darkTheme && 'light_pre'}`}>
+                  Capital:
+                </span>
                 {country.capital}
               </p>
             </div>

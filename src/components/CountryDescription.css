@@ -9,9 +9,7 @@
   padding: 6rem 3rem 1rem;
   position: relative;
 }
-.light_mode{
-  color: var(--VeryDarkBlueText);
-}
+
 .back_btn {
   display: flex;
   align-items: center;
@@ -63,7 +61,7 @@
   flex-direction: column;
 }
 .country_title {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 800;
   color: var(--White);
   margin: 1.5rem 0 2rem;
@@ -170,37 +168,33 @@
     bottom: 0.5rem;
   }
 }
-@media only screen and (max-width: 750px){
+@media only screen and (max-width: 750px) {
   .country_description {
     padding: 6rem 1.5rem 3rem;
   }
   .country_info_container {
-   
     flex-direction: column;
     justify-content: flex-start;
     gap: 2rem;
     position: static;
   }
-  .back_btn{
+  .back_btn {
     left: 1.5rem;
   }
   .country_flag {
-
     min-width: 100%;
-    max-width:100%;
-
+    max-width: 100%;
   }
-  .country_info_details{
+  .country_info_details {
     width: 100%;
   }
   .detail_cols {
-  
     gap: 2rem;
   }
-  .fixed{
+  .fixed {
     width: 100%;
   }
-  .borders_list{
+  .borders_list {
     width: 100%;
   }
   .vals.borders {
@@ -208,4 +202,24 @@
     left: 0;
     bottom: 0;
   }
+}
+.back_btn_light {
+  background-color: var(--White);
+  color: var(--VeryDarkBlueText);
+  box-shadow: 0px 1px 5px 1px var(--DarkGrayShade);
+}
+.light {
+  color: var(--VeryDarkBlueText);
+}
+.light_pre {
+  color: var(--DarkBlue);
+  font-weight: 600;
+}
+.border_link_light {
+  background-color: var(--White);
+  color: var(--VeryDarkBlueText);
+  box-shadow: 0px 1px 5px 1px var(--DarkGrayShade);
+}
+.light_mode {
+  color: var(--VeryDarkBlueText);
 }
