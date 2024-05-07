@@ -28,6 +28,7 @@
   font-size: 16px;
   text-decoration: none;
   color: var(--VeryLightGray);
+  transition: all 0.3s ease;
 }
 .back_btn img {
   width: 20px;
